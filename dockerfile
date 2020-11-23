@@ -2,5 +2,6 @@ FROM python
 RUN pip install pandoc-plantuml-filter
 
 FROM pandoc/latex
-COPY pandoc-gls.lua ./usr/local/bin
+WORKDIR /usr/src/pandoc
+COPY pandoc-gls.lua .
 RUN tlmgr install glossaries
