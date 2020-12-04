@@ -1,5 +1,5 @@
-# Install Java
-FROM adoptopenjdk:latest
+# Install PlantUML
+FROM think/plantuml
 
 # Install Pandoc
 FROM pandoc/latex
