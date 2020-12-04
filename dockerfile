@@ -1,5 +1,5 @@
 FROM pandoc/latex
 WORKDIR /data
-ENTRYPOINT ["/usr/local/bin/pandoc"]
-COPY filters/ ./filters
+COPY filters/ .
 RUN tlmgr install glossaries
+ENTRYPOINT ["/usr/local/bin/pandoc"]
