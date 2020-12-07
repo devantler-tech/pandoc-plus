@@ -10,7 +10,7 @@ RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
 ENV PLANTUML /plantuml.jar
 
 # Install LaTeX Glossaries package
-RUN tlmgr install glossaries
+RUN sudo tlmgr install glossaries
 
 # Set WD and Entrypoint
 WORKDIR /data
