@@ -13,7 +13,6 @@ RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
 ENV PLANTUML /plantuml.jar
 
 # Install LaTeX packages
-
 RUN tlmgr update --self
 RUN tlmgr update --all
 RUN tlmgr install glossaries \
@@ -21,6 +20,7 @@ RUN tlmgr install glossaries \
     xfor \
     datatool
 RUN tlmgr path add
+
 # Set WD and Entrypoint
 WORKDIR /data
 ENTRYPOINT ["/usr/local/bin/pandoc"]
