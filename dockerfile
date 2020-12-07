@@ -1,4 +1,7 @@
-FROM pandoc/latex
+FROM pandoc/latex:latest
+
+# Update Alpine and install tools
+RUN apk upgrade --update && apk add --no-cache --update bash
 
 # Install Java
 RUN apk --no-cache add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
@@ -9,12 +12,11 @@ RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
     && apk del curl
 ENV PLANTUML /plantuml.jar
 
-# Install LaTeX package glossaries
+# Install LaTeX packages
 
-RUN tlmgr install xfor \
-    && tlmgr install datatool-base.sty \
-    && tlmgr install mfirstuc \
-    && tlmgr install glossaries
+RUN tlmgr update --self
+RUN tlmgr update --all
+RUN tlmgr install glossaries
 
 # Set WD and Entrypoint
 WORKDIR /data
