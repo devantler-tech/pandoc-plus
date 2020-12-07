@@ -9,7 +9,7 @@ RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
     && apk del curl
 ENV PLANTUML /plantuml.jar
 
-# Install LaTeX Glossaries package
+# Install LaTeX packages
 
 RUN tlmgr update --self \
     && tlmgr install mfirstuc \
