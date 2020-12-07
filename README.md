@@ -1,2 +1,13 @@
 # docker.pandoc-plus
-A docker image that extends the official pandoc docker image with glossaries for LaTeX and a glossary and plantuml filter for markdown.
+
+A docker image that extends the official pandoc/latex docker image.
+
+The following has been added:
+
+LaTex packages:
+
+- glossaries
+
+Other:
+
+- PlantUML

@@ -7,10 +7,10 @@ RUN apk --no-cache add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpi
 RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
-ENV PLANTUML = /plantuml.jar
+ENV PLANTUML /plantuml.jar
+
 # Add Filters
 WORKDIR /
-COPY filters/ /root/.pandoc/filters
 COPY filters/ /root/.local/share/pandoc/filters
 
 # Install LaTeX Glossaries package
