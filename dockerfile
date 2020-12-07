@@ -12,6 +12,7 @@ ENV PLANTUML /plantuml.jar
 # Install LaTeX package glossaries
 
 RUN tlmgr install xfor \
+    && tlmgr install datatool-base.sty \
     && tlmgr install mfirstuc \
     && tlmgr install glossaries
 
