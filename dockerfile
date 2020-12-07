@@ -10,8 +10,8 @@ RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
 ENV PLANTUML = /plantuml.jar
 # Add Filters
 WORKDIR /
-COPY filters/ /root/.pandoc
-COPY filters/ /root/.local/share/pandoc
+COPY filters/ /root/.pandoc/filters
+COPY filters/ /root/.local/share/pandoc/filters
 
 # Install LaTeX Glossaries package
 RUN tlmgr install glossaries
