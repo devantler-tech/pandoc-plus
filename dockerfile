@@ -12,6 +12,7 @@ ENV PLANTUML /plantuml.jar
 # Install LaTeX Glossaries package
 
 RUN tlmgr update --self \
+    && tlmgr install mfirstuc \
     && tlmgr install glossaries
 
 # Set WD and Entrypoint
