@@ -11,7 +11,7 @@ ENV PLANTUML /plantuml.jar
 
 # Install LaTeX packages
 
-RUN tlmgr update --self \
+RUN tlmgr install xfor \
     && tlmgr install mfirstuc \
     && tlmgr install glossaries
 
