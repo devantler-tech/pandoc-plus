@@ -16,7 +16,8 @@ ENV PLANTUML /plantuml.jar
 
 RUN tlmgr update --self
 RUN tlmgr update --all
-RUN tlmgr install glossaries
+RUN tlmgr install glossaries \
+    mfirstuc
 
 # Set WD and Entrypoint
 WORKDIR /data
