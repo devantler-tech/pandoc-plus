@@ -5,8 +5,7 @@ RUN apk --no-cache add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpi
 
 # Install PlantUML
 RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
-    && mkdir /app \
-    && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /app/plantuml.jar \
+    && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
 
 # Add Filters
