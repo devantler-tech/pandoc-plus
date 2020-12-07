@@ -16,11 +16,8 @@ ENV PLANTUML /plantuml.jar
 
 RUN tlmgr update --self
 RUN tlmgr update --all
-RUN tlmgr install glossaries \
-    mfirstuc \
-    xfor \
-    datatool
-
+RUN tlmgr install glossaries
+RUN tlmgr path add
 # Set WD and Entrypoint
 WORKDIR /data
 ENTRYPOINT ["/usr/local/bin/pandoc"]
