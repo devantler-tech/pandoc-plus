@@ -11,6 +11,7 @@ ENV PLANTUML = /plantuml.jar
 # Add Filters
 WORKDIR /
 COPY filters/ /root/.pandoc
+COPY filters/ /root/.local/share/pandoc
 
 # Install LaTeX Glossaries package
 RUN tlmgr install glossaries
