@@ -7,6 +7,7 @@ The following has been added:
 LaTex packages:
 
 - glossaries
+- easy-todo
 
 Other:
 

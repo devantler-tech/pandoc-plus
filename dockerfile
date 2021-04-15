@@ -18,7 +18,8 @@ RUN tlmgr update --all
 RUN tlmgr install glossaries \
     mfirstuc \
     xfor \
-    datatool
+    datatool \
+    easy-todo
 RUN tlmgr path add
 
 # Set WD and Entrypoint
