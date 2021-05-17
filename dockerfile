@@ -21,6 +21,7 @@ RUN tlmgr install glossaries \
     datatool
 RUN tlmgr install easy-todo \
     tocloft
+RUN tlmgr install tex-gyre
 RUN tlmgr path add
 
 # Set WD and Entrypoint
