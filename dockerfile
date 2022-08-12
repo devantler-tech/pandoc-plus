@@ -13,16 +13,15 @@ RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
 ENV PLANTUML /plantuml.jar
 
 # Install LaTeX packages
-RUN tlmgr update --self
-RUN tlmgr update --all
+RUN tlmgr update --self && tlmgr update --all
 RUN tlmgr install glossaries \
     mfirstuc \
     xfor \
-    datatool
-RUN tlmgr install easy-todo \
-    tocloft
-RUN tlmgr install tex-gyre
-RUN tlmgr path add
+    datatool \
+    easy-todo \
+    tocloft \
+    tex-gyre \
+    && tlmgr path add
 
 # Set WD and Entrypoint
 WORKDIR /data
