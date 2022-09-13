@@ -1,14 +1,3 @@
-# docker.pandoc-plus
+# pandoc-plus
 
-A docker image that extends the official pandoc/latex docker image.
-
-The following has been added:
-
-LaTex packages:
-
-- glossaries
-- easy-todo
-
-Other:
-
-- PlantUML
+A docker image that packages pandoc with LaTeX, PlantUML, and pandoc lua filters, so it can be used to create scientific papers.
