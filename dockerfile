@@ -1,5 +1,8 @@
 FROM ubuntu:22.10
 
+ENV TZ=Europe/Copenhagen
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN apt update && apt install -y \
     default-jre \
     texlive texlive-latex-extra \
