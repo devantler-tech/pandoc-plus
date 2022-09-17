@@ -6,7 +6,6 @@ RUN apk add --no-cache \
     graphviz \
     ttf-droid \
     ttf-droid-nonlatin \
-    texlive-full \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
@@ -20,6 +19,7 @@ RUN tlmgr update --self --all \
     tocloft \
     tex-gyre \
     textcase \
+    authblk \
     && tlmgr path add
 
 ENV PLANTUML /plantuml.jar
