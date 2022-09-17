@@ -5,6 +5,7 @@ RUN apk add --no-cache \
     openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     graphviz \
     texlive-full \
+    tlmgr \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
