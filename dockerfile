@@ -16,7 +16,7 @@ RUN apt-get update \
 
 ENV PLANTUML /plantuml.jar
 
-COPY filters ~/.pandoc/filters
+COPY filters ~/.local/share/pandoc/filters
 
 # Set WD and Entrypoint
 WORKDIR /data
