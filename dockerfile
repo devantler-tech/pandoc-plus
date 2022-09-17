@@ -22,6 +22,7 @@ RUN tlmgr install glossaries \
     tocloft \
     tex-gyre \
     textcase \
+    authblk \
     && tlmgr path add
 
 # Set WD and Entrypoint
