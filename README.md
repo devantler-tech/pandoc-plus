@@ -24,9 +24,8 @@ jobs:
         uses: docker://ghcr.io/devantler/pandoc-plus:main
         with: 
           args: >-
-            main.yaml 
+            -d main.yaml 
             -o document.pdf
-            file.md
       - name: Upload generated document
         uses: actions/upload-artifact@master
         with:
