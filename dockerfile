@@ -1,14 +1,16 @@
 FROM pandoc/core:latest-ubuntu
 
 # Update Alpine and install tools
-RUN apt-get install -y \
+RUN apt-get update \
+    && apt-get install -y \
     default-jre \
     texlive-latex-extra \
     librsvg2-bin \
     plantuml \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
-    && apt-get purge curl
+    && apt-get purge -y curl \
+    && rm -rf /var/lib/apt/lists/*
 
 ENV PLANTUML /plantuml.jar
 
