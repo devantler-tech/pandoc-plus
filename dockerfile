@@ -6,6 +6,7 @@ RUN apk add --no-cache \
     graphviz \
     ttf-droid \
     ttf-droid-nonlatin \
+    texlive-full \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
