@@ -4,6 +4,10 @@ A docker image that packages pandoc with LaTeX, PlantUML, and pandoc lua filters
 
 ## How To
 
+```bash
+docker run -v "$(pwd)/folder:/data" --name pandoc-plus pandoc-plus:main -d main.yaml -o outfile.pdf
+```
+
 ```yaml
 name: Pandoc Document Conversion
 
