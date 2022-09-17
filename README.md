@@ -20,6 +20,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+      - name: Generate document
         uses: docker://ghcr.io/devantler/pandoc-plus:main
         with: 
           args: >-
