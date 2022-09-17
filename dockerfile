@@ -15,4 +15,4 @@ RUN which pandoc
 
 COPY filters ~/.pandoc/filters
 
-ENTRYPOINT ["/usr/local/bin/pandoc"]
+ENTRYPOINT ["/usr/bin/pandoc"]
