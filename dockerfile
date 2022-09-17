@@ -1,26 +1,14 @@
-FROM pandoc/core:latest
+FROM pandoc/core:latest-ubuntu
 
 # Update Alpine and install tools
-RUN apk add --no-cache \
-    openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
-    graphviz \
-    texlive-full \
-    tlmgr \
+RUN apt-get install -y \
+    default-jre \
+    texlive-latex-extra \
+    librsvg2-bin \
+    plantuml \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
-    && apk del curl
-
-RUN tlmgr update --self --all \
-    # && tlmgr install glossaries \
-    # mfirstuc \
-    # xfor \
-    # datatool \
-    # easy-todo \
-    # tocloft \
-    # tex-gyre \
-    # textcase \
-    # authblk \
-    && tlmgr path add
+    && apt-get purge curl
 
 ENV PLANTUML /plantuml.jar
 
