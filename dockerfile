@@ -1,19 +1,17 @@
 FROM pandoc/latex:2.17
 
 # Update Alpine and install tools
-RUN apk upgrade --update \
-    && apk add --no-cache --update \
-    bash \
+RUN apk add --no-cache \
     openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community \
     graphviz \
     ttf-droid \
     ttf-droid-nonlatin \
-    texlive-full \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
 
-RUN tlmgr install glossaries \
+RUN tlmgr update --self --all \
+    && tlmgr install glossaries \
     mfirstuc \
     xfor \
     datatool \
