@@ -1,5 +1,9 @@
 FROM pandoc/core:latest-ubuntu
 
+# Hack to make tzdata install without prompting for a timezone.
+ENV TZ=Europe/Copenhagen
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 # Update Alpine and install tools
 RUN apt-get update \
     && apt-get install -y \
