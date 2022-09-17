@@ -11,8 +11,6 @@ RUN apt update && apt install -y \
     plantuml \
     pandoc
 
-RUN which pandoc
-
 COPY filters ~/.pandoc/filters
 
 ENTRYPOINT ["/usr/bin/pandoc"]
