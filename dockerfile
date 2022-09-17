@@ -1,4 +1,4 @@
-FROM pandoc/latex:latest
+FROM pandoc/latex:2.17
 
 # Update Alpine and install tools
 RUN apk upgrade --update \
@@ -8,10 +8,20 @@ RUN apk upgrade --update \
     graphviz \
     ttf-droid \
     ttf-droid-nonlatin \
-    curl \
     texlive-full \
+    curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apk del curl
+
+RUN tlmgr install glossaries \
+    mfirstuc \
+    xfor \
+    datatool \
+    easy-todo \
+    tocloft \
+    tex-gyre \
+    textcase \
+    && tlmgr path add
 
 ENV PLANTUML /plantuml.jar
 
