@@ -1,4 +1,4 @@
-FROM pandoc/latex:2.17
+FROM pandoc/latex:latest
 
 # Update Alpine and install tools
 RUN apk add --no-cache \
