@@ -1,6 +1,5 @@
 FROM pandoc/core:latest-ubuntu
 
-COPY filters /github/home/.local/share/pandoc
 
 ENV PLANTUML /plantuml.jar
 # Hack to make tzdata install without prompting for a timezone.
@@ -16,6 +15,8 @@ RUN apt-get update \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apt-get purge -y curl \
     && rm -rf /var/lib/apt/lists/*
+
+ADD filters /data
 
 # Set WD and Entrypoint
 WORKDIR /data
