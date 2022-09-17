@@ -1,26 +1,28 @@
-FROM ubuntu:22.10
+FROM pandoc/latex:latest
 
-# Hack to make tzdata install without prompting for a timezone.
-ENV TZ=Europe/Copenhagen
-RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+# Update Alpine and install tools
+RUN apk upgrade --update && apk add --no-cache --update bash
 
-RUN apt-get update && apt-get install -y \
-    wget \
-    git \
-    default-jre \
-    texlive-latex-extra \
-    librsvg2-bin \
-    plantuml \
-    pandoc \
-    && rm -rf /var/lib/apt/lists/*
+# Install Java
+RUN apk --no-cache add openjdk11 --repository=http://dl-cdn.alpinelinux.org/alpine/edge/community
 
-RUN git clone https://github.com/lierdakil/pandoc-crossref.git && \
-    cd pandoc-crossref && \
-    git checkout v0.3.13.0b && \
-    stack install && \
-    cd .. && \
-    rm -rf pandoc-crossref
+# Install PlantUML
+RUN apk add --no-cache graphviz ttf-droid ttf-droid-nonlatin curl \
+    && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
+    && apk del curl
+ENV PLANTUML /plantuml.jar
 
-COPY filters ~/.pandoc/filters
+# Install LaTeX packages
+RUN tlmgr update --self && tlmgr update --all
+RUN tlmgr install glossaries \
+    mfirstuc \
+    xfor \
+    datatool \
+    easy-todo \
+    tocloft \
+    tex-gyre \
+    && tlmgr path add
 
-ENTRYPOINT ["/usr/bin/pandoc"]
+# Set WD and Entrypoint
+WORKDIR /data
+ENTRYPOINT ["/usr/local/bin/pandoc"]
