@@ -16,7 +16,7 @@ RUN apt-get update \
     && apt-get purge -y curl \
     && rm -rf /var/lib/apt/lists/*
 
-ADD filters /data
+COPY filters /data
 
 # Set WD and Entrypoint
 WORKDIR /data
