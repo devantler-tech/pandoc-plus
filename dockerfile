@@ -17,6 +17,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 COPY filters /data/filters
+COPY filters /github/home/.local/share/pandoc/filters
 
 # Set WD and Entrypoint
 WORKDIR /data
