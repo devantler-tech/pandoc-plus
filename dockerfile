@@ -16,8 +16,7 @@ RUN apt-get update \
     && apt-get purge -y curl \
     && rm -rf /var/lib/apt/lists/*
 
-COPY filters /data/filters
-COPY filters /github/home/.local/share/pandoc/filters
+COPY filters /pandoc/filters
 
 # Set WD and Entrypoint
 WORKDIR /data
