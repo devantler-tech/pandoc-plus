@@ -20,4 +20,4 @@ COPY filters /pandoc/filters
 
 # Set WD and Entrypoint
 WORKDIR /data
-ENTRYPOINT ["/usr/local/bin/pandoc", "--data-dir=/github/home/.local/share/pandoc"]
+ENTRYPOINT ["/usr/local/bin/pandoc", "--data-dir=/pandoc"]
