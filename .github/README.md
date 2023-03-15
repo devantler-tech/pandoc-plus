@@ -29,6 +29,6 @@ jobs:
       - name: Upload generated document
         uses: actions/upload-artifact@master
         with:
-          name: file.pdf
-          path: file.pdf
+          name: document.pdf
+          path: document.pdf
 ```
