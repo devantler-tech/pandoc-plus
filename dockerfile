@@ -11,6 +11,7 @@ RUN apt-get update \
     && apt-get install -y \
     default-jre \
     texlive-latex-extra \
+    graphviz \
     curl \
     && curl -L https://sourceforge.net/projects/plantuml/files/plantuml.jar/download -o /plantuml.jar \
     && apt-get purge -y curl \
