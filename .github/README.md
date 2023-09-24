@@ -32,3 +32,7 @@ jobs:
           name: document.pdf
           path: document.pdf
 ```
+
+## References
+
+- [lua-filters](https://github.com/pandoc/lua-filters)
