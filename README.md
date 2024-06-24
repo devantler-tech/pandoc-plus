@@ -4,6 +4,12 @@ A docker image that packages pandoc with LaTeX, PlantUML, and pandoc lua filters
 
 <!-- readme-tree start -->
 ```
+.
+├── .github
+│   └── workflows
+└── filters
+
+3 directories
 ```
 <!-- readme-tree end -->
 
