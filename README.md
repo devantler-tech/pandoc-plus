@@ -9,7 +9,7 @@ A docker image that packages pandoc with LaTeX, PlantUML, and pandoc lua filters
 │   └── workflows
 └── filters
 
-3 directories
+4 directories
 ```
 <!-- readme-tree end -->
 
