@@ -1,0 +1,11 @@
+name: Publish
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  publish:
+    uses: devantler-tech/.github/.github/workflows/image-publish.yaml@main
+    secrets: inherit
